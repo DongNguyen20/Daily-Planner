@@ -1,0 +1,365 @@
+<html>
+
+<head>
+    <title>
+        Daily Plan
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #e0f7fa;
+        }
+
+        header {
+            background-image: url('https://placehold.co/1920x300?text=Header+Cover+Image');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .taskbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #01579b;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+        }
+
+        .taskbar .links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .taskbar a:hover {
+            background-color: #0277bd;
+        }
+
+        .taskbar a i {
+            margin-right: 8px;
+        }
+
+        .taskbar .avatar {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .taskbar .search {
+            display: flex;
+            align-items: center;
+            position: relative;
+            flex-grow: 1;
+            max-width: 300px;
+        }
+
+        .taskbar .search input {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding-right: 30px;
+        }
+
+        .taskbar .search .search-button {
+            position: absolute;
+            right: 10px;
+            color: #01579b;
+        }
+
+        .dashboard {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 200px;
+            background-color: #4fc3f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        footer {
+            background-color: #01579b;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0288d1;
+            color: white;
+        }
+
+        .actions {
+            width: 150px;
+        }
+
+        .actions button {
+            margin-right: 2px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .actions .view {
+            color: #4caf50;
+        }
+
+        .actions .edit {
+            color: #ff9800;
+        }
+
+        .actions .delete {
+            color: #f44336;
+        }
+
+        .chart {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #01579b;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .taskbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .taskbar .links {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .taskbar .search {
+                width: 100%;
+                max-width: none;
+                margin-top: 10px;
+            }
+
+            .dashboard {
+                padding: 10px;
+            }
+
+            .content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Daily Plan
+        </h1>
+    </header>
+    <div class="taskbar">
+        <div class="links">
+            <a href="#">
+                <i class="fas fa-home">
+                </i>
+                Home
+            </a>
+            <a href="#">
+                <i class="fas fa-tasks">
+                </i>
+                Tasks
+            </a>
+            <a href="#">
+                <i class="fas fa-calendar-alt">
+                </i>
+                Schedule
+            </a>
+        </div>
+        <div class="search">
+            <input placeholder="Search..." type="text" />
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div>
+            <a href="#">
+                <img alt="User avatar image" class="avatar" height="30"
+                    src="https://storage.googleapis.com/a1aa/image/jIqhyNtKfJ0tdKfi8er3GogeNUzwLSuVoFLVD5D3lifxukddC.jpg"
+                    width="30" />
+            </a>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="content">
+            <h2>
+                Dashboard
+            </h2>
+            <p>
+                Welcome to your daily plan dashboard. Here you can manage your tasks and schedule.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Task</th>
+                        <th> Due Date</th>
+                        <th> Status</th>
+                        <th class="actions"> Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Task 1
+                        </td>
+                        <td>
+                            2023-10-01
+                        </td>
+                        <td>
+                            Pending
+                        </td>
+                        <td class="actions">
+                            <button class="view">
+                                <i class="fas fa-eye">
+                                </i>
+                            </button>
+                            <button class="edit">
+                                <i class="fas fa-pen">
+                                </i>
+                            </button>
+                            <button class="delete">
+                                <i class="fas fa-trash">
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Task 2
+                        </td>
+                        <td>
+                            2023-10-02
+                        </td>
+                        <td>
+                            Completed
+                        </td>
+                        <td class="actions">
+                            <button class="view">
+                                <i class="fas fa-eye">
+                                </i>
+                            </button>
+                            <button class="edit">
+                                <i class="fas fa-pen">
+                                </i>
+                            </button>
+                            <button class="delete">
+                                <i class="fas fa-trash">
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Task 3
+                        </td>
+                        <td>
+                            2023-10-03
+                        </td>
+                        <td>
+                            In Progress
+                        </td>
+                        <td class="actions">
+                            <button class="view">
+                                <i class="fas fa-eye">
+                                </i>
+                            </button>
+                            <button class="edit">
+                                <i class="fas fa-pen">
+                                </i>
+                            </button>
+                            <button class="delete">
+                                <i class="fas fa-trash">
+                                </i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="chart">
+                Weekly Plan Chart
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        Advertisement
+    </div>
+    <footer>
+        <p>
+            © 2024 Daily Plan. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>
