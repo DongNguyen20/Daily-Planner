@@ -1,0 +1,47 @@
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.loading-container {
+    width: 100%; /* Chiều rộng thanh loading */
+    height: 40px; /* Chiều cao thanh loading */
+    /*border: 0.5px solid #333;*/
+    background-color: #def5f8;
+    position: relative;
+    overflow: hidden;
+    border-radius: 55px;
+    display: flex;
+    align-items: center;
+}
+
+.loading-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dog {
+    height: 100px;  /* Kích thước chú chó */
+    animation: moveDog 10s linear infinite; /* Di chuyển chú chó */
+    z-index: 2; /* Đặt hình ảnh chú chó lên trên thanh màu */
+}
+
+@keyframes moveDog {
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}

@@ -1,4 +1,4 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>
@@ -6,8 +6,10 @@
     </title>
     <script src="https://cdn.tailwindcss.com">
     </script>
+    <link rel="icon" type="image/png" th:href="@{/img/logo.jpg}"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/home.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -20,11 +22,9 @@
         }
 
         header {
-            background-image: url('https://placehold.co/1920x300?text=Header+Cover+Image');
-            background-size: cover;
             background-position: center;
             color: white;
-            padding: 40px 20px;
+            padding: 0 40px;
             text-align: center;
         }
 
@@ -218,9 +218,7 @@
 
 <body>
     <header>
-        <h1>
-            Daily Plan
-        </h1>
+        <img src="/img/huskyrun.png" style="height:80px">
     </header>
     <div class="taskbar">
         <div class="links">
@@ -354,12 +352,23 @@
     </div>
     <div class="popup">
         Advertisement
+        <!-- Close button -->
+        <button class="close-btn" onclick="closePopup()">×</button>
+    </div>
+    <div class="loading-container">
+        <img class="dog dog1" src="/img/pugrun.gif" alt="Chú chó đang chạy">
     </div>
     <footer>
         <p>
             © 2024 Daily Plan. All rights reserved.
         </p>
     </footer>
+    <script>
+        // Function to close the popup
+        function closePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
